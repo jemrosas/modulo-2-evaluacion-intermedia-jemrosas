@@ -1,32 +1,46 @@
 'use strict';
-const userNumber = document.querySelector('js-number');
-const clue = document.querySelector('.js-clue');
+
+const userNumber = document.querySelector('.js-number');
 const button = document.querySelector('.js-btn');
+const clue = document.querySelector('.js-clue');
+const userAttempt = document.querySelector('.js-attempt');
+
+let counter = 0;
+
+function getRandomNumber(max) {
+  return Math.ceil(Math.random() * max);
+}
+
+let randomNumberResult = getRandomNumber(100);
+console.log(`Nº aleatorio ` + randomNumberResult);
 
 function gameNumber(event) {
   event.preventDefault();
-  getRandomNumber();
   compareNumbers();
+  increaseCounter();
 }
-
-function getRandomNumber() {
-  let result = Math.ceil(Math.random() * 100);
-  console.log(result);
-  return result;
-}
-let randomNumberResult = this.getRandomNumber();
-let gNumber = userNumber.value;
 
 function compareNumbers() {
-  if (gNumber > randomNumberResult) {
-    clue.innerHTML = 'Demasiado alto';
-  } else if (gNumber < randomNumberResult) {
-    clue.innerHTML = 'Demasiado bajo';
-  } else if (gNumber === randomNumberResult) {
+  const userNumberValue = parseInt(userNumber.value);
+
+  if (userNumberValue === randomNumberResult) {
     clue.innerHTML = 'Has ganado, campeona!!!';
+  } else if (userNumberValue > 100 || userNumberValue < 1) {
+    clue.innerHTML = 'Tienes que poner un número entre 1 y 100';
+  } else if (userNumberValue < randomNumberResult) {
+    clue.innerHTML = 'Demasiado bajo';
   } else {
-    clue.innerHTML = 'El número debe estar entre 1 y 100';
+    clue.innerHTML = 'Demasiado alto';
   }
 }
+
+function increaseCounter() {
+  counter += 1;
+  userAttempt.innerHTML = counter;
+}
+
+//const showCounter = () => {
+//counter += 1;
+//counterEl.innerHTML = counter;
 
 button.addEventListener('click', gameNumber);
