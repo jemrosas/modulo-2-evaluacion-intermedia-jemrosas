@@ -1,4 +1,50 @@
+body {
+  height: 100vh;
+  margin: 20px 25px;
+}
+
 .page {
   display: flex;
   flex-direction: column;
+  font: 18px 'Baloo Chettan 2';
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 50px;
+  }
+  &__label {
+    margin-bottom: 10px;
+  }
+  &__number {
+    width: 30%;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: lightgrey;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+  }
+  &__btn {
+    width: 9%;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: turquoise;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.info {
+  &__clue,
+  &__try {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    border: 3px lightgrey solid;
+  }
 }

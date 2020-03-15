@@ -2,7 +2,7 @@
 
 const userNumber = document.querySelector('.js-number');
 const button = document.querySelector('.js-btn');
-const clue = document.querySelector('.js-clue');
+const clue = document.querySelector('.js-info');
 const userAttempt = document.querySelector('.js-attempt');
 
 let counter = 0;
@@ -38,9 +38,5 @@ function increaseCounter() {
   counter += 1;
   userAttempt.innerHTML = counter;
 }
-
-//const showCounter = () => {
-//counter += 1;
-//counterEl.innerHTML = counter;
 
 button.addEventListener('click', gameNumber);
