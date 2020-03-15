@@ -5,24 +5,26 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Módulo 2 - evaluación intermedia</title>
-        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-        rel="stylesheet" />-->
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap"
+        rel="stylesheet" />
         <link rel="stylesheet" href="./assets/css/main.css" />
     </head>
     
     <body>
         <main class="page">
-             <h1>Adivina el número</h1> 
-            <form class="form" action="submit">
-                <label for="userNumber">Introduce aquí tu número</label>
+             <h1 class="form__title">Adivina el número</h1> 
+            <form class="form">
+                <label class="form__label">Introduce aquí tu número :</label>
                 <input class="js-number form__number"
-                id="userNumber" type="text" name="userNumber" />
+                type="number" name="inputNumber" />
                 <input class="js-btn form__btn" type="submit" value="Prueba" />
                 </label>
             </form>
             <section class="info">
-                <p class="js-clue info__clue">Pista: Escribe el número y dale a Prueba</p>
-                <p class="js-try info__try">Número de intentos:</p>
+                <p class="js-clue info__clue">Pista: <span class="js-info">Escribe el número y dale a Prueba</span> 
+                </p>
+                <p class="info__try">Número de intentos: <span class="js-attempt">0</span> 
+                </p>
             </section>
         </main>
         <script type="text/javascript" src="./assets/js/main.js"></script>
